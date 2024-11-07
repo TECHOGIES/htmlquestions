@@ -3,152 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techogies - Practice HTML Questions</title>
+    <meta property="og:title" content="Techogies: Get a Chance to Earn a Certificate - HTML Test & Practice">
+    <meta property="og:description" content="Complete the HTML test and practice to earn your certificate. Watch the introductory video before proceeding.">
+    <meta property="og:image" content="TECHOGIES.jpg">
+    <meta property="og:url" content="https://www.techogies.com/">
+    <link rel="icon" href="TECHOGIES.jpg">
+    <title>Techogies: Get a Chance to Earn a Certificate</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://img.freepik.com/free-vector/gradient-cyber-futuristic-background_23-2149117429.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        .container {
+
+        header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            background-color: #3e206d;
             padding: 20px;
         }
-        .sidebar {
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+        header img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
-        .sidebar h2 {
-            margin-top: 0;
-            font-size: 1.5em;
+
+        header img:hover {
+            transform: rotate(360deg);
         }
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2em;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ff0081, #ff8c00);
-            box-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
-            transition: all 0.3s ease;
-        }
-        .sidebar a:hover {
-            background: linear-gradient(45deg, #ff8c00, #ff0081);
-            box-shadow: 0 0 20px rgba(255, 0, 128, 0.8);
-        }
-        .sidebar .typing-animation1 {
-            font-size: 1.5em;
-            animation: typing1 2s steps(30, end) infinite;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .sidebar .typing-animation2 {
-            font-size: 1.5em;
-            animation: typing2 2.5s steps(30, end) infinite;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        @keyframes typing1 {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes typing2 {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        .video-container {
-            flex-grow: 1;
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
             margin: 0 auto;
-            max-width: 800px;
-            position: relative;
-            padding-top: 56.25%;
+            background-color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
-        .video-container iframe {
+
+        h1 {
+            font-size: 2.8rem;
+            color: #3e206d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #FF6D00;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .cta-button:after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 8px;
+            border: 2px solid #FF6D00;
+            transition: transform 0.3s ease;
+            transform: scale(1.1);
+            opacity: 0;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        .cta-button:hover:after {
+            transform: scale(1);
+            opacity: 1;
         }
-        .button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            animation: glowing 1.5s infinite alternate;
+
+        .cta-button:hover {
+            background-color: #E65100;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-        @keyframes glowing {
-            0% { box-shadow: 0 0 5px #007bff; }
-            100% { box-shadow: 0 0 20px #007bff; }
-        }
-        .footer {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
+
+        footer {
+            background-color: #3e206d;
+            color: white;
+            padding: 20px;
             text-align: center;
+            border-top: 4px solid #FF6D00;
         }
-        .footer p {
-            margin: 10px 0;
-        }
-        .footer a {
-            color: #ffeb3b;
-            text-decoration: none;
+
+        footer a {
+            color: #FF6D00;
             font-weight: bold;
+            text-decoration: none;
         }
-        .footer a:hover {
+
+        footer a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            iframe {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h2>Practice Questions</h2>
-            <a href="https://techogies.github.io/htmlmcqs/" class="typing-animation1">HTML OG MCQs</a>
-            <a href="https://techogies.github.io/htmlfillintheblanks/" class="typing-animation2">HTML OG Fill-in-the-Blanks</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAT34Te8ILaS5G_6-yhmDu-z78aNtRIrDKp6dOBq8jx_u-Vg/viewform" class="button">Join Our Bootcamp</a>
-            <a href="https://whatsapp.com/channel/0029Va4DEuwGE56iUsKYUP25" class="button">Join Our WhatsApp Channel</a>
-            
-            <!-- Suggested Playlists -->
-            <h2>Suggested Playlists</h2>
-            <a href="https://youtube.com/playlist?list=PLNlNWbChYIWt8xn2HMzfqk0wVKgglW4v6&si=cpoG-7vdiq6RhLth" class="button">Playlist 1</a>
-            <a href="https://youtube.com/playlist?list=PLNlNWbChYIWt91Fc5XZtGIJ5Nuu0soGh9&si=5ahYsyqp_fA_f-YS" class="button">Playlist 2</a>
-            <a href="https://youtube.com/playlist?list=PLNlNWbChYIWsfgbaBK3Noc0fKq4655Q3p&si=fyL7CcqpS1l-hopF" class="button">Playlist 3</a>
-            <a href="https://youtube.com/playlist?list=PLNlNWbChYIWu5PvlOdxN_oCLJ_ylEiUNH&si=8wwTfAKxZ1Bhtjk_" class="button">Playlist 4</a>
-        </div>
 
-        <!-- Video Container -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/_OLbB2489vY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+<header>
+    <a href="https://www.techogies.com/">
+        <img src="TECHOGIES.jpg" alt="Techogies Logo">
+    </a>
+</header>
+
+<div class="container">
+    <h1>Welcome to Techogies: Earn Your Certificate</h1>
+
+    <div class="video-container">
+        <h2>Watch the Video Before You Start</h2>
+        <iframe src="https://www.youtube.com/embed/mDwXhdtr3Uw?autoplay=1" allow="autoplay; encrypted-media"></iframe>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>Created by Uzair Ahmed 2024</p>
-        <p>Techogies</p>
-        <p><a href="https://youtube.com/@techogies?si=kAOE_snydJLYMnN4" target="_blank"><img src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png" alt="YouTube" style="width: 24px; vertical-align: middle;"> Subscribe on YouTube</a></p>
+    <div class="cta-buttons">
+        <a href="test.html">
+            <button class="cta-button">Take the 1-Hour Test</button>
+        </a>
+        <a href="mcq.html">
+            <button class="cta-button">Practice MCQs</button>
+        </a>
+        <a href="fillintheblank.html">
+            <button class="cta-button">Fill in the Blank</button>
+        </a>
     </div>
+</div>
+
+<footer>
+    <p>Made with ❤️ by <a href="https://www.instagram.com/uzairvibes/?igsh=MXEwczdtd290aXl0Zw%3D%3D" target="_blank">Uzair Sir</a></p>
+    <p>Visit our website: <a href="https://www.techogies.com/" target="_blank">www.techogies.com</a></p>
+</footer>
+
 </body>
 </html>
